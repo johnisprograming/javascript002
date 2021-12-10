@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 setInterval() 2</title>
+		<script type="text/javascript">
+			var count = 0;
+			
+			function start(){
+				//alert(): 이미지 10개 출력
+				alert("이미지 10개 출력");
+				// 타이머 설정				
+				timerID = setInterval("showImage()", 1000);
+			}
+			
+			function showImage(){
+				count++;
+				
+				// apple bomb ..... 이미지 출력
+				if(count % 2 == 0){
+					document.write("<img src='image/apple.png'>");
+				}
+				else{
+					document.write("<img src='image/bomb.png'>");
+				}
+				
+				//document.body.innerHTML += "<img>"; 
+				
+				//10개 출력 했으면 타이머 해지
+				if(count == 10){
+					clearInterval(timerID);
+					alert("이미지 출력 완료");
+				}
+
+			}
+			
+		</script>
+	</head>
+	<body onLoad='start()'>
+		
+	</body>
+</html>

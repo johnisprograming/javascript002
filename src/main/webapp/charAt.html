@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 charAt() 메소드</title>
+		<script type="text/javascript">
+			// 입력된 값은 문자열 
+			var num = prompt("숫자를 입력하세요");
+			
+			// 문자열에서 문자 하나씩 검색해서
+			// 숫자가 아니면 알림창 출력하고
+			// for문 중단 : break
+			for(var i=0; i<num.length; i++)
+				if(!('0' <= num.charAt(i) && num.charAt(i) <='9')){
+					alert("숫자 형식이 아닙니다!");
+					break;			
+				}
+
+			document.write(num);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

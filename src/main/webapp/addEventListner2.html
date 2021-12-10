@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 addEventListner()</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var btn = document.getElementById('btn');
+			
+			// 동일 이벤트 여러 번 적용 가능 : show1()와 show2() 둘다 실행됨
+			btn.addEventListener("click",show1);
+			btn.addEventListener("click",show2);
+		};
+		
+		function show1() {
+			alert("실행 1");
+		}
+		function show2(){
+			alert("실행 2");
+		}
+		
+	</script>
+</head>
+<body>
+	<button id="btn">클릭</button>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 </title>
+		<style>
+        	div {margin:0 auto; width:100%; text-align:center;}
+    	</style>
+        <script type="text/javascript">
+	        var imgCount = 1;    
+	        var countNum = 10;
+            
+            function startCount() {
+                timerID = setInterval('showImg()', 500);
+            }
+            
+            function showImg() {
+            	countH1.innerHTML = countNum;
+            	bombImg.src = `image/bomb${imgCount}.jpg`;
+            	
+            	imgCount++;
+            	countNum--;            	
+
+                if(imgCount == 12) {
+                    clearInterval(timerID);
+                    imgCount = 1;
+                    countNum = 10;
+                }
+            }
+        </script>
+</head>
+<body>
+	<div>
+		<h1 id="countH1">10</h1>
+		<img id="bombImg" src="image/bomb1.jpg" ><br><br>	
+		<button id="btn" onClick="startCount()">카운트다운 시작</button>
+	</div>
+    
+</body>
+<!-- <style>
+        * {margin-left: 50px;}
+    </style>
+       <script type="text/javascript">
+           var count = 11;
+           var img = 0;
+           function changeImg() {
+               changimg = setInterval('showImg()', 500)
+           }
+           function showImg() {
+               count--;
+               img++;
+               document.body.innerHTML = "<h1 id=\"count\">" + count + "</h1>";
+               document.body.innerHTML += `<img src="image/bomb${img}.jpg"><br>`
+               document.body.innerHTML += "<button id=\"btn\" onclick=\"changeImg()\">카운트다운 시작</button>"
+
+               if(count == 0) {
+                   clearInterval(changimg);
+                   count = 11;
+                   img = 0;
+               }
+           }
+</script> -->
+        
+
+
+
+
+
