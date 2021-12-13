@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 객체 생성 : 생성자 함수(function) 이용</title>
+		<script type="text/javascript">
+			// 생성자 함수를 이용하여 함수 정의
+			function People() {
+				// 멤버 변수 : 프로퍼티(속성)
+				this.name = "홍길동";
+				this.age = 21;
+				
+				//메서드
+				this.getName = function() {
+					return this.name;
+				}
+			}
+			
+			// new 연산자를 사용해서 객체(인스턴스) 생성
+			var person = new People();
+			console.log(person.name);
+			console.log(person.age);
+			console.log(person.getName());
+			
+			// 생성자 함수를 변경하지 않고도 function(){ } 외부에서 프로퍼티(속성) 추가가능
+			person.address = "서울";
+			// 메소드 추가 가능
+			person.getAddress = function() {
+				return this.address;
+			}
+			
+			// 새로 추가된 메소드 호출
+			console.log(person.getAddress());
+			
+			// person2 객체 새로 생성 
+			// address는 person에만 추가한 것이기 때문에
+			// person2에는 없다 : 호출하면 오류 발생
+			var person2 = new People();
+			//console.log(person2.getAddress()); //오류 
+				
+			/*********************************************** */
+			
+			
+			// 매개변수로 값 전달
+			function Book(title, author, price, date){
+				this.title = title;
+				this.author = author;
+				this.price = price;
+				this.date = date;
+				
+				// 메서드
+				this.getBook = function() {
+					return this.title + " " + this.author + " " + this.price + " " + this.date;
+				}				
+			}
+			
+			//객체 생성하면서 생성자 함수에게 값 전달
+			let book = new Book("자바스크립트", "이몽룡", 20000, '2021-12-12');
+			console.log(book.getBook());
+			
+			// 함수이므로 호이스팅 가능
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

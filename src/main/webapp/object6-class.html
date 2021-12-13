@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 객체 생성 : class 키워드 사용</title>
+		<script type="text/javascript">
+			class Person {
+				// 생성자
+				constructor(name, age){
+					//프로퍼티 정의
+					this.name = name;
+					this.age = age;
+				}
+				// getter : 프로퍼티 반환
+				 get name() {
+					return this._name; // 프로퍼티 앞에 밑줄문자 붙임
+				} 
+				
+				get age() {
+					return this._age;  // 프로퍼티 앞에 밑줄문자 붙임
+				}
+				
+				// setter : 프로퍼티 값 설정
+				set name(name){
+					this._name = name;  // 프로퍼티 앞에 밑줄문자 붙임
+				}
+				
+				set age(age){
+					this._age = age;  // 프로퍼티 앞에 밑줄문자 붙임
+				}
+				
+				// 필요한 메서드 추가
+				toString() {
+					return this.name +"은 " + this.age + "살입니다";
+				}
+			}
+			
+			// 객체 생성 : 호이스팅 불가 (클래스 정의 이전에 객체 생성 불가)
+			let person1 = new Person('홍길동', 25);
+			let person2 = new Person('이몽룡', 30);
+			
+			// getter 호출 : 괄호() 없음
+			console.log('성명 : ' +  person1.name + ',  나이 : ' + person1.age);
+			console.log('성명 : ' +  person2.name + ',  나이 : ' + person2.age);
+			
+			// toStirng() 메서드 호출
+			console.log(person1.toString());
+			console.log(person2.toString());
+			
+			// setter 호출 : 괄호() 없음
+			person1.age = 27;
+			console.log(person1.toString());
+			
+			person2.name ="성춘향";
+			person2.age = 20;
+			console.log(person2.toString());
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
